@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="jpa" transaction-type="RESOURCE_LOCAL">
+		<class>ec.edu.ups.entidad.Usuario</class>
+		<class>ec.edu.ups.entidad.Telefono</class>
+		<class>ec.edu.ups.entidad.TipoTelefono</class>
+		
+		<properties>
+			<property name="eclipselink.oddl-generation" value="drop-and-create-tables"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jee"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value=""/>
+			<property name="javax.persistence.jdbc.dirver" value="com.mysql.cj.jdbc.Driver"/>
+	        <property name="javax.persistence.target-database" value="MySQL"/>
+		</properties>
+		
+	</persistence-unit>
+</persistence>
