@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ec.edu.ups.dao.DAOFactory;
 import ec.edu.ups.dao.UsuarioDAO;
@@ -44,6 +45,7 @@ public class CrearUsuarioControlador extends HttpServlet {
 		boolean flag=false;
 		
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
+		HttpSession session = request.getSession(true);
 		
 		if(request.getParameter("nombre").isEmpty()) {
 			request.setAttribute("mensaje", "(!) Llene todos los campos");
@@ -76,11 +78,13 @@ public class CrearUsuarioControlador extends HttpServlet {
 				
 				us = new Usuario(cedula, nombres, apellidos, correo);
 				usuarioDAO.create(us);
-				
+				//System.out.println(">>>"+us.getId());
+				session.setAttribute("id", us.getId());
 				url = "/UlloaBermeoIvan-Examen/JSP/ingresar_telefono.jsp";
 				httpResponse.sendRedirect(url);
 				
 			} catch (Exception e) {
+				System.out.println(e.getMessage());
 				request.setAttribute("mensaje", "(!) Ha ocurrido un ERROR INTERNO");
 				url="/JSP/ingresar_usuario.jsp";
 				getServletContext().getRequestDispatcher(url).forward(request, response);

@@ -31,22 +31,22 @@
                                                 <div class="col-md-6">
                                                 	<div class="form-group">
                                                         <label class="small mb-1" for="inputName">Nombres</label>
-                                                        <input class="form-control py-4" name="nombre" id="inputName" type="text" placeholder="Ingrese el nombre" />
+                                                        <input class="form-control py-4" name="nombre" id="inputName" type="text" placeholder="Ingrese los nombres" />
                                                     </div>
                                                 
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputName">Apellidos</label>
-                                                        <input class="form-control py-4" name="apellido" id="inputName" type="text" placeholder="Ingrese el nombre" />
+                                                        <input class="form-control py-4" name="apellido" id="inputName" type="text" placeholder="Ingrese los apellidos" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputPrecio">Cedula</label>
-                                                        <input class="form-control py-4" name="cedula" id=inputPrecio type="number" placeholder="Ingrese el precio" />
+                                                        <input class="form-control py-4" name="cedula" id=inputPrecio type="text" placeholder="Ingrese la cedula" />
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputdescripcion">Correo</label>
-                                                        <input class="form-control py-4" name="correo" id="inputdescripcion" type="text" placeholder="Ingrese la descripcion" />                                                     
+                                                        <input class="form-control py-4" name="correo" id="inputdescripcion" type="email" placeholder="Ingrese el email" />                                                     
                                                                                                                 
                                                     </div>                                                   
                                                                                                   
@@ -57,16 +57,18 @@
                                             	<input class="btn btn-primary btn-block" type="submit" value="Crear Usuario"/>    
                                             	
                                             	<a class="btn btn-primary btn-block" href="/UlloaBermeoIvan-Examen/JSP/index.jsp">				
-					                                Cancelar
+					                                CAncelar
 					                            </a>
+					                            
+					                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+		                                        		<p>${m}</p>
+		                                        </div>
                                             	        
                                             </div>
                                             
                                         </form>
                                         
-                                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                        		<p>${m}</p>
-                                        </div>
+                                        
                                         
                                     </div>
                                     <!-- <div class="card-footer text-center">

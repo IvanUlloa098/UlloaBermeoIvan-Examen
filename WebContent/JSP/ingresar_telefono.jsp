@@ -15,6 +15,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
+    <c:set var="m" scope="request" value="${mensaje}" />
     
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
@@ -25,16 +26,17 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Registrar Producto</h3></div>
                                     <div class="card-body">
-                                        <form action="/Practica_laboratorio_1/RegistrarProductoControlador" method="post">
+                                        <form action="/UlloaBermeoIvan-Examen/IngresarTelefonoControlador" method="post">
                                             <div class="form-row">
                                                 <div class="col-md-6">
                                                 <div class="form-group">
                                                         <label class="small mb-1" for="inputid">Numero</label>
-                                                        <input class="form-control py-4" name="numero" id="inputid" type="number" placeholder="Ingrese el id" />
+                                                        <input class="form-control py-4" name="numero" id="inputid" type="text" placeholder="Ingrese el telefono" />
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputdescripcion">Operadora</label>
                                                         <select id="cars" name="operadora" class="custom-select">														  
+													        <option value="NINGUNO">NINGUNO</option>
 													        <option value="CNT">CNT</option>
 													        <option value="MOVISTAR">MOVISTAR</option>
 													        <option value="CLARO">CLARO</option>
@@ -46,9 +48,9 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputdescripcion">Tipo de Telefono</label>
-                                                        <select id="cars" name="operadora" class="custom-select">														  
-													        <option value="1">CONVENCIONAL</option>
-													        <option value="2">TELEFONO</option>													        										    
+                                                        <select id="cars" name="tipo" class="custom-select">														  
+													        <option value="1">CELULAR</option>
+													        <option value="2">CONVENCIONAL</option>													        										    
 														</select>
                                                     </div>                                                  
                                                                                                    
@@ -58,11 +60,15 @@
                                             
                                            	
                                             <div class="form-group mt-4 mb-0">
-                                            	<input class="btn btn-primary btn-block" type="submit" value="Insertar Telefono"/> 
+                                            	<input class="btn btn-primary btn-block" type="submit" value="Igresar Telefono"/> 
                                             	
                                             	<a class="btn btn-primary btn-block" href="/UlloaBermeoIvan-Examen/JSP/index.jsp">				
-					                                Cancelar
+					                                Terminar
 					                            </a>
+					                            
+					                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+		                                        		<p>${m}</p>
+		                                        </div>
                                             	           
                                             </div>
                                             
@@ -71,6 +77,8 @@
                                             
                                             
                                         </form>
+                                        
+                                        
                                     </div>
                                     <!-- <div class="card-footer text-center">
                                         <div class="small"><a href="login.html">Ya tienes una cuenta? ir a login</a></div>

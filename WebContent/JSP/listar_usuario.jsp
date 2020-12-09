@@ -77,21 +77,23 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                            <form action="/Practica_laboratorio_1/ModificarRequerimientoControlador" method="post">	
+                            
+                            <form action="/UlloaBermeoIvan-Examen/ListarUsuarioControlador" method="post">	
                             	<div class="col-md-6">                     
                               
                            		<div class="form-group">
                                      <label class="small mb-1" for="inputid">Cedula o telefono: </label>
-                                     <input class="form-control py-4" name="id" id="inputid" type="number" placeholder="Ingrese el id" />
+                                     <input class="form-control py-4" name="id" id="inputid" type="number" placeholder="Ingrese el valor" />
                                         
                                  </div>
                                  
-                              	<input class="btn btn-primary btn-block" name="eli" type="submit" value="Buscar Usuario"/>
-                              	<input class="btn btn-primary btn-block" name="list" type="submit" value="Listar Usuario"/>
+                              	<input class="btn btn-primary btn-block" name="buscar" type="submit" value="Buscar Usuario"/>
+                              	<input class="btn btn-primary btn-block" name="listar" type="submit" value="Listar Usuario"/>
                                  
                               </div>
                               
                               <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                              		<p>${m}</p>
                               </div>
                               
                         </form>
@@ -107,28 +109,34 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
-                                                <th>Producto</th>
-                                                <th>Cantidad</th>
-                                                <th>Estado</th>
+                                                <th>Nombres</th>                                                
+                                                <th>Apellidos</th>
+                                                <th>Cedula</th>
+                                                <th>Correo</th>
+                                                <th>Telefono</th>
+                                                <th>Operadora</th>
+                                                <th>Tipo</th>
                                                 
                                             </tr>
                                         </thead>
                                         
                                         <tbody>
-                                        <!--<c:set var="pr" scope="request" value="${productos}" />
-                                            <c:forEach var="rq" items="${requerimientos}" varStatus="loop">
+                                        
+                                            <c:forEach var="tl" items="${lista}" varStatus="loop">
                                             
                                             	
                                             	<tr>
-                                            		<td><c:out value="${rq.getId()}"/></td>
-                                            		<td><c:out value="${pr[loop.index]}"/></td>  
-                                            		<td><c:out value="${rq.getCantidad()}"/></td>
-                                            		<td><c:out value="${rq.getEstado()}"/></td>  
+                                            		<td><c:out value="${tl.getUsuario().getNombres()}"/></td>  
+                                            		<td><c:out value="${tl.getUsuario().getApellidos()}"/></td>
+                                            		<td><c:out value="${tl.getUsuario().getCedula()}"/></td>  
+                                            		<td><c:out value="${tl.getUsuario().getCorreo()}"/></td>
+                                            		<td><c:out value="${tl.getNumero()}"/></td>  
+                                            		<td><c:out value="${tl.getOperadora()}"/></td>  
+                                            		<td><c:out value="${tl.getTipoTelefono().getTipo()}"/></td>  
                                             	</tr>
                                             	
                                             
-                                            </c:forEach>-->
+                                            </c:forEach>
                                             
                                         </tbody>
                                     </table>
