@@ -8,7 +8,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name="tipo_telefono") 
 public class TipoTelefono implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -18,12 +18,15 @@ public class TipoTelefono implements Serializable {
 	private int id;
 	private String tipo;
 	
-	@JoinColumn
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "tipoTelefono")
 	private Telefono telefono;
 
 	public TipoTelefono() {
 		super();
+	}
+	
+	public TipoTelefono(String tipo) {
+		this.setTipo(tipo);
 	}
 
 	public int getId() {

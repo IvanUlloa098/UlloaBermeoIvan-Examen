@@ -9,7 +9,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name="usuario") 
 public class Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -27,6 +27,15 @@ public class Usuario implements Serializable {
 
 	public Usuario() {
 		super();
+	}
+	
+	public Usuario(String cedula, String nombres, String apellidos, String correo) {
+		
+		this.setCedula(cedula);
+		this.setNombres(nombres);
+		this.setApellidos(apellidos);
+		this.setCorreo(correo);
+		
 	}
 
 	public int getId() {

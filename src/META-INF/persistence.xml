@@ -5,13 +5,14 @@
 		<class>ec.edu.ups.entidad.Telefono</class>
 		<class>ec.edu.ups.entidad.TipoTelefono</class>
 		
-		<properties>
-			<property name="eclipselink.oddl-generation" value="drop-and-create-tables"/>
+		<properties>		
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jee"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<property name="javax.persistence.jdbc.password" value=""/>
 			<property name="javax.persistence.jdbc.dirver" value="com.mysql.cj.jdbc.Driver"/>
 	        <property name="javax.persistence.target-database" value="MySQL"/>
+	        <property name="javax.persistence.schema-generation.database.action"
+                value="drop-and-create" />
 		</properties>
 		
 	</persistence-unit>
